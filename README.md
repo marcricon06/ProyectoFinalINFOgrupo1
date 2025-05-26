@@ -21,4 +21,4 @@ URL del video: XXXXX
 
 Cabe recalcar que en este proyecto hemos hecho un buen equipo y hemos sabido adaptarnos a los roles los 3, 
 todos hemos sido importantes en cada parte del proyecto ya sea generando el codigo o ayudando a hacer el video.
-No ha habido ningun problema entre nosotros por falta de compromiso o trabajo y estamos muy satisfecchos con el proyecto.
+No ha habido ningun problema entre nosotros por falta de compromiso o trabajo y estamos muy satisfechos con el proyecto que ha quedado.
