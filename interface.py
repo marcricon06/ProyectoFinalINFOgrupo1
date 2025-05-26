@@ -10,7 +10,7 @@ from path import PlotPath
 from tkinter import simpledialog
 from airspace import *
 from matplotlib.backends.backend_tkagg import NavigationToolbar2Tk
-import simplekml
+import simplekml #Hay que instalarlo en la terminal
 
 
 # Example graph from step 3
@@ -196,14 +196,19 @@ class GraphApp:
             self.ax.text(mid_x, mid_y, f"{dist:.2f}", color="blue", fontsize=3)
 
         # Dibujamos nodos, coloreando vecinos en rojo, nodos alcanzables en verde, y el resto azul
+        selected_node_name = self.node_var.get() if self.node_var else None
+
         for node in self.current_graph.nodes:
-            if node.name in self.highlighted_neighbors:
-                color = 'red'
+            if node.name == selected_node_name:
+                color = 'darkred'  # Nodo seleccionado
+            elif node.name in self.highlighted_neighbors:
+                color = 'orange'  # Vecinos resaltados
             elif node.name in self.reachable_nodes:
-                color = 'green'
+                color = 'green'  # Nodos alcanzables
             else:
-                color = 'blue'
-            self.ax.plot(node.x, node.y, 'o', label=node.name, markersize=3, color=color)
+                color = 'blue'  # Otros nodos
+
+            self.ax.plot(node.x, node.y, 'o', label=node.name, markersize=5, color=color)
             self.ax.text(node.x + 0.1, node.y + 0.1, node.name, fontsize=6)
 
         # Dibujamos rutas resaltadas (paths)
@@ -218,8 +223,8 @@ class GraphApp:
         self.ax.grid(True, linestyle='--', alpha=0.5)
 
         self.canvas.draw()
-#cargar ejemplos predeterminados
-    def load_example_1(self):
+
+    def load_example_1(self):#cargar ejemplos predeterminados
         self.current_graph = example_graph_1()
         self.update_node_menu()
         self.redraw()
@@ -299,14 +304,14 @@ class GraphApp:
         if not node:
             return
 
-        neighbors = set(n.name for n in self.current_graph.get_neighbors(node))
+        # Aquí usamos node.neighbors directamente
+        neighbors = set(n.name for n in node.neighbors)
         if not neighbors:
             messagebox.showinfo("Neighbors", f"No neighbors found for node {node_name}")
             return
 
         messagebox.showinfo("Neighbors", f"Neighbors of {node_name}: {', '.join(neighbors)}")
 
-        # Guardamos vecinos para pintar y exportar
         self.highlighted_neighbors = neighbors
         self.highlighted_paths = []  # limpiamos rutas si estamos mostrando vecinos
 
@@ -567,7 +572,6 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = GraphApp(root)
     root.mainloop()
-
 
 
 
