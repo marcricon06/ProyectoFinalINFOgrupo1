@@ -17,7 +17,7 @@ URL del video: [Version 3 codigo](https://youtu.be/o1KqeR5zHGw?si=haz87kT8qb2rD0
 Versión 4 generada por Marc/
 Versión 4 verificada por David/
 Versión 4 comunicada por Arnau y Marc/
-URL del video: XXXXX
+URL del video: [Versión 4](https://youtu.be/GOFrUvuMzcA?si=kSjwwdhdmC7i2BFP)
 
 Cabe recalcar que en este proyecto hemos hecho un buen equipo y hemos sabido adaptarnos a los roles los 3, 
 todos hemos sido importantes en cada parte del proyecto ya sea generando el codigo o ayudando a hacer el video.
